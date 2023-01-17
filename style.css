@@ -1,0 +1,203 @@
+@import url('https://fonts.googleapis.com/css2?family=Hubballi&family=Yeon+Sung&display=swap');
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Yeon Sung', cursive;
+
+}
+
+body{
+    height: 100vh;
+    background: linear-gradient(gray, white, gray);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* .container .color{
+    position: absolute;
+    filter: blur(150px);
+}
+.container .color:nth-child(1){
+    top: -350px;
+    width: 1200px;
+    height: 500px;
+    background: #ff359b;
+}
+.container .color:nth-child(2){
+    bottom: -150px;
+    left: 100px;
+    width: 700px;
+    height: 400px;
+    background: #fffd87;
+}
+.container .color:nth-child(3){
+    bottom: 50px;
+    right: 100px;
+    width: 1000px;
+    height: 250px;
+    background: #00d2ff; */
+/* } */
+
+.container{    
+    width: 85vw;  
+    max-width: 700px;  
+    min-height: 40vh;
+    box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+    border-top-left-radius: 180px;
+    border-bottom-right-radius: 180px;
+    position: relative;   
+}
+
+.container .box1, .box2, .box3, .box4{
+    animation: animate 7s linear infinite; 
+    animation-delay: calc(-1s * var(--i));   
+}
+
+@keyframes animate{
+    0%,100%
+    {
+        transform: translateY(-40px);
+    }
+    50%
+    {
+        transform: translateY(40px);
+    }
+}
+
+.box1{
+   
+    width: 100px;
+    height: 100px;   
+    box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+    border-top-left-radius: 30px;
+    border-bottom-right-radius: 30px; 
+    position: absolute;
+    bottom: 30px;
+    left: -75px;
+   
+}
+.box2{  
+    width: 100px;
+    height: 100px;
+    box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+    border-top-left-radius: 30px;
+    border-bottom-right-radius: 30px; 
+    position: absolute;
+    right: -75px;
+    top: -40px;   
+}
+
+.box3{  
+    width: 50px;
+    height: 50px;
+    box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+    border-top-left-radius: 15px;
+    border-bottom-right-radius: 15px; 
+    position: absolute;
+    left: 100px;
+    top: -70px;
+}
+
+.box4{  
+    width: 60px;
+    height: 60px;
+    box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+    border-top-left-radius: 20px;
+    border-bottom-right-radius: 20px; 
+    position: absolute;
+    right: 170px;
+    top: 380px;   
+}
+
+h2{
+    text-align: center;
+    margin: 35px;
+}
+
+.todo-add{
+    text-align: center;
+}
+
+#todo-input{
+    width: 450px;   
+    padding: 7px;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+}
+
+#todo-button{
+    padding: 7px;
+    margin: 5px;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+}
+
+@media (max-width:768px ) {
+    .container{    
+        width: 75vw;          
+        min-height: 40vh;        
+        border-top-left-radius: 150px;
+        border-bottom-right-radius: 150px;      
+    }
+    #todo-input{
+        width: 300px;              
+    }
+    .box1{   
+        width: 130px;
+        height: 130px;        
+        border-top-left-radius: 40px;
+        border-bottom-right-radius: 40px;      
+        bottom: -65px;
+        left: -65px;       
+    }
+    .box2{  
+        width: 90px;
+        height: 90px;       
+        border-top-left-radius: 40px;
+        border-bottom-right-radius: 40px;     
+        right: -45px;
+        top: -45px;       
+    }
+    .box4{  
+        width: 60px;
+        height: 60px;       
+        border-top-left-radius: 20px;
+        border-bottom-right-radius: 20px;        
+        right: 100px;
+        top: 250px;   
+    }
+   
+  }
+
+@media (max-width:400px ) {
+    .container{    
+        width: 60vw;          
+        min-height: 40vh;        
+        border-top-left-radius: 100px;
+        border-bottom-right-radius: 100px;      
+    }
+    #todo-input{
+        width: 150px;              
+    }
+    .box1{   
+        width: 100px;
+        height: 100px;        
+        border-top-left-radius: 30px;
+        border-bottom-right-radius: 30px;      
+        bottom: -50px;
+        left: -50px;       
+    }
+    .box2{  
+        width: 60px;
+        height: 60px;       
+        border-top-left-radius: 20px;
+        border-bottom-right-radius: 20px;     
+        right: -30px;
+        top: -30px;       
+    }
+   
+  }
