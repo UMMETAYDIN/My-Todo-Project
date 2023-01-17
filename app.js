@@ -12,7 +12,7 @@ const renderSavedTodos=()=>{
     todos.forEach((todo)=>{
         createListElement(todo)
     })
-})
+}
 
 
 
@@ -38,4 +38,49 @@ createListElement(newTodo);
     }
 })
 //lokal storage  gönderilen veriler saklanır session storage' dekiler silinir
-function
+
+
+function createListElement(newTodo){
+const li=document.createElement ("li");// li elementi oluşturduk
+li.setAttribute("id", id);
+completed&&li.classList.add("checked");
+
+
+const okIcon= document.createElement("i");//li elemneti içerisindeki  icon oluştu en soldaki
+okIcon.setAttribute("class", "fas fa-check");
+li.appendChild("okIcon" );
+
+
+const p = document.createElement ("p"); //li elemneti içerisindeki  text oluştu ortadaki
+const pTextNode=document.createTextNode(text);
+p.appendChild(pTextNode);
+li.appendChild(p);
+
+const deleteIcon=document.createElement("i"); //li elemneti içerisindeki  icon oluştu en sagdaki
+deleteIcon.setAttribute("class", "fas da-trash");
+li.appendChild(deleteIcon);
+
+todoUl.appendChild(li);// ul nin cocugu olan li yi  ul nin içine aldık
+
+}
+
+todoUl.addEventListener("click", (e)=>{
+   const id= e.target.parentElement.getAttribute("id");
+
+   if(e.target.classList.contains("fa-trash")){  // sayfalardaki köşedeki x işaretine basıp sayfayı kapatmak istedigimizde de aynısını yaparız
+    e.target.parentElement.remove();// sileriz
+    todos= todos.filter((todo)=>todo.id !==Number(id));
+    localStorage.setItem("TODOS", JSON.stringify(todos));
+    }else if(e.target.classList.contains("fa-check")){
+        e.target.parentElement.classList.toggle("checked");
+        todos.map((todo, index)=>{
+            if(todo.id==id){
+                todos[index].completed=!todos[index].completed
+                
+            }
+
+        })
+    }
+
+
+});
